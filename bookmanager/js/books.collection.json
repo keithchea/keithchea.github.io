@@ -1,0 +1,28 @@
+[{	
+	"id"		: 101,
+	"title" 	: "Beginner JavaScript",
+	"author" 	: "Keith Chea",
+	"year"		: "2010",
+	"price"		: "19.99"
+},
+{
+	"id"		: 102,	
+	"title" 	: "Intermediate JavaScript",
+	"author" 	: "Keith Chea",
+	"year"		: "2011",
+	"price"		: "29.99"
+},
+{	
+	"id"		: 103,
+	"title" 	: "Advanced JavaScript",
+	"author" 	: "Keith Chea",
+	"year"		: "2012",
+	"price"		: "39.99"
+},
+{	
+	"id"		: 104,
+	"title" 	: "Super Advanced JavaScript",
+	"author" 	: "Keith Chea",
+	"year"		: "2013",
+	"price"		: "49.99"
+}]

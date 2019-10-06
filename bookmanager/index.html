@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+	<title>Books Collection</title>
+	<script type="text/javascript" src="./js/libs/jquery-1.7.2.min.js"></script>
+	<script type="text/javascript" src="./js/libs/jquery-ui-1.8.20.custom.min.js"></script>	
+	<script type="text/javascript" src="./js/books.globals.js"></script>
+	<script type="text/javascript" src="./str/books.strings.js"></script>
+	<script type="text/javascript" src="./js/books.views.js"></script>
+	<script type="text/javascript" src="./js/books.controllers.js"></script>
+	<script type="text/javascript" src="./js/books.events.js"></script>
+	<script type="text/javascript" src="./js/books.utilities.js"></script>
+	<link rel="stylesheet" type="text/css" href="./css/libs/jquery-ui-1.8.20.custom.css"></link>
+	<link rel="stylesheet" type="text/css" href="./css/books.dialog.css"></link>	
+	<link rel="stylesheet" type="text/css" href="./css/books.table.css"></link>
+</head>
+<body>
+	<div>
+		<button id="add" type="button">Add</button>
+	</div>
+	<table id="books-table">
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Year</th>
+				<th>Price</th>
+			</tr>
+		</thead>
+		<tbody>
+			<!-- books -->
+		</tbody>
+	</table>
+	<div id="error1" style="display:none;color:red;"><p></p></div>
+	<div id="book-dialog" style="display:none;">
+		<div>
+			<label for="book-title">Title: </label>
+			<input id="book-title" name="book-title" type="text" size="25">
+			<div class="error book-title-error" style="display:none;"><p></p></div>
+		</div>
+		<div>
+			<label for="book-author">Author: </label>
+			<input id="book-author" name="book-author" type="text" size="25">
+			<div class="error book-author-error" style="display:none;"><p></p></div>
+		</div>
+		<div>
+			<label for="book-year">Year: </label>
+			<input id="book-year" name="book-year" type="text" size="25">
+			<div class="error book-year-error" style="display:none"><p></p></div>			
+		</div>
+		<div>
+			<label for="book-price">Price: </label>
+			<input id="book-price" name="book-price" type="text" size="25">
+			<div class="error book-price-error" style="display:none;"><p></p></div>			
+		</div>
+	</div>
+</body>
+</html>

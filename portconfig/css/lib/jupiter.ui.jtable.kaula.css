@@ -1,0 +1,148 @@
+/*
+@author kchea@jupiter.com. (c) 2013 Jupiter Systems Inc. 
+
+jtable format: 
+
+    jtable-[theme].[property]
+
+    Every jtable has its properties (alternate, rounded, fixed etc) classes, for example:
+
+    jtable-kaula.alternate
+    jtable-kaula.rounded
+    jtable-kaula.fixed
+
+    Example:
+    <table class="jtable-kaula rounded">...</table>
+    <table class="jtable-kaula fixed">...</table>
+    <table class="jtable-kaula alternate">...</table>
+
+*/
+.jtable-kaula {
+	width: 100%;	
+	border-collapse: collapse;
+}
+.jtable-kaula tfoot td { 
+	padding: 6px; 
+}
+.jtable-kaula thead th {
+
+	background: #a7cfdf; /* Old browsers */
+	/* IE9 SVG, needs conditional override of 'filter' to 'none' */
+	background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2E3Y2ZkZiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMyMzUzOGEiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+	background: -moz-linear-gradient(top,  #a7cfdf 0%, #23538a 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a7cfdf), color-stop(100%,#23538a)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #a7cfdf 0%,#23538a 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #a7cfdf 0%,#23538a 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #a7cfdf 0%,#23538a 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #a7cfdf 0%,#23538a 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a7cfdf', endColorstr='#23538a',GradientType=0 ); /* IE6-8 */
+		
+	color: #ffffff;
+	font-family:Helvetica;
+	text-transform: uppercase;
+	text-align: left;
+	font-size: 1em;
+	
+	padding: 12px 6px;	
+}
+.jtable-kaula tbody {
+	border: 1px solid #DFDFDF;
+}
+.jtable-kaula tbody td { 
+	color: #00496B; 
+	font-size: 1em;
+	font-weight: normal; 
+	padding: 6px 6px; 	
+}
+.jtable-kaula tr.ui-selected td,
+.jtable-kaula tr.selected td {
+	background: #f7fbfc; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f7fbfc 0%, #d9edf2 40%, #add9e4 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7fbfc), color-stop(40%,#d9edf2), color-stop(100%,#add9e4)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f7fbfc 0%,#d9edf2 40%,#add9e4 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7fbfc', endColorstr='#add9e4',GradientType=0 ); /* IE6-9 */
+}
+
+/**************** TABLE PROPERTIES ****************/
+.jtable-kaula.rounded thead th:first-child{
+	-moz-border-top-left-radius: 6px;
+	-webkit-border-top-left-radius: 6px;
+	border-top-left-radius: 6px;
+}
+.jtable-kaula.rounded thead th:last-child{
+	-moz-border-top-right-radius: 6px;
+	-webkit-border-top-right-radius: 6px;
+	border-top-right-radius: 6px;
+}
+.jtable-kaula.hover tbody tr:hover,
+.jtable-kaula.hover tbody tr:nth-child(even):hover{
+	cursor: pointer;
+	
+	background: #f2f5f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+	
+}
+.jtable-kaula.alternate tbody tr:nth-child(even) { 
+	background: #f2f5f6; /* Old browsers */
+	background: -moz-linear-gradient(top,  #f2f5f6 0%, #e3eaed 37%, #c8d7dc 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f2f5f6), color-stop(37%,#e3eaed), color-stop(100%,#c8d7dc)); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  #f2f5f6 0%,#e3eaed 37%,#c8d7dc 100%); /* W3C */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f2f5f6', endColorstr='#c8d7dc',GradientType=0 ); /* IE6-9 */
+}
+.jtable-kaula.dotted-hline tbody tr {
+	border-bottom: dotted 1px #DFDFDF;
+}
+.jtable-kaula.dotted-hline tbody tr:last-child {
+	border-bottom: inherit;
+}
+.jtable-kaula.dotted-vline tbody td {
+	border-left: dotted 1px #DFDFDF;
+}
+.jtable-kaula.dotted-vline tbody td:first-child {
+	border-left: inherit;
+}
+.jtable-kaula.solid-hline tbody tr {
+	border-bottom: solid 1px #DFDFDF;
+}
+.jtable-kaula.solid-hline tbody tr:last-child {
+	border-bottom: inherit;
+}
+.jtable-kaula.solid-vline tbody td {
+	border-left: solid 1px #DFDFDF;
+}
+.jtable-kaula.solid-vline tbody td:first-child {
+	border-left: inherit;
+}
+.jtable-kaula.fixed {
+	table-layout: fixed;
+}
+
+/**************** CELL PROPERTIES ****************/
+.jtable-kaula thead th.right,
+.jtable-kaula tbody td.right {
+	text-align: right;
+}
+.jtable-kaula thead th.center,
+.jtable-kaula tbody td.center {
+	text-align: center;
+}
+.jtable-kaula thead th.left,
+.jtable-kaula tbody td.left {
+	text-align: left;
+}
+.jtable-kaula thead th.nowrap,
+.jtable-kaula tbody td.nowrap {
+	white-space: nowrap;
+}

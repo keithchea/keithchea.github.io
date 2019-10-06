@@ -1,0 +1,35 @@
+/* FOR 52 PORTS */
+.jport-config-holder {
+	width: 1200px; 
+	height: 1400px;
+}
+.jport-config-port-layout {
+	width: 1000px; 
+}
+.jport-config-wireframe {
+	height: 78px;
+}
+.jport-config-grid .jport-config-grp .jport-config-port {
+	width: 25px; 
+	height: 20px; 
+	margin: 0 1px 10px; 
+}
+.jport-config-portnum {
+	line-height: 22px; 
+}
+.jport-config-top-margin {
+	margin-top: 0; /* LAST 4 PORTS */
+}
+.jport-config-bottom-margin {
+	margin-bottom: 2px !important;	/* LAST 4 PORTS */
+}
+.jport-config-port-width {
+	width: 30px !important;
+}
+.jport-config-trunk,
+.jport-config-quad,
+.jport-config-dual,
+.jport-config-single,
+.jport-config-unlag {
+	height: 150px;
+}

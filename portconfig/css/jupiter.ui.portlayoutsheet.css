@@ -1,0 +1,262 @@
+/* BEGIN WHOLE PAGE LAYOUT */
+html, 
+body {
+	height: 99%;
+}
+.jport-config-holder {
+	width: 800px;
+	height: 1100px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;	
+}
+.jport-config-header {
+	position: relative;
+	width: 100%;
+	margin-bottom: 20px;
+}
+.jport-config-body {
+	position: relative;
+	width: 100%;
+}
+.jport-config-footer {
+	position: absolute;
+	width: 100%;
+	height: 50px;
+	bottom: 0;
+}
+/* END WHOLE PAGE LAYOUT */
+
+/* BEGIN HEADER STUFF */
+.jport-config-page-title {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.jport-config-jupiter-pn,
+.jport-config-order-num,
+.jport-config-config {
+	width: 100%;	
+	margin-left: auto;
+	margin-right: auto;
+}
+.jport-config-jupiter-pn {
+	text-align: right;	
+}
+/* END HEADER STUFF */
+
+
+/* BEGIN BODY STUFF */
+.jport-config-wireframe {
+	height: 110px;
+	margin-bottom: 100px;
+	border: 2px solid black;
+	
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	
+	background-color: #D1E0E0;	
+}
+.jport-config-port-layout {
+	width: 600px;
+	position: relative;
+	height: 110px;
+	float: right;
+}
+.jport-config-model {
+	margin: 20px;
+	position: relative;
+	float: left;
+	font-weight: bolder;
+}
+.jport-config-grid {
+	width: 100%;
+	height: 60%;	
+}
+.jport-config-grid .jport-config-grp {
+	float: left;
+}
+.jport-config-grid .jport-config-grp .jport-config-port {
+	display: block;
+	border: 1px solid black;
+	width: 30px;
+	height: 30px;
+	margin: 0 2px 20px;
+	background-color: gray;
+}
+.jport-config-trunk {
+	border: 2px solid red;
+	height: 150px;
+}
+.jport-config-quad {
+	border: 2px solid orange;
+	height: 150px;
+}
+.jport-config-dual {
+	border: 2px solid green;
+	height: 150px;
+}
+.jport-config-unlag {
+	border: 2px solid blue;
+	height: 150px;
+}
+.jport-config-single {
+	border: 2px solid gray;
+	height: 150px;
+}
+.jport-config-info {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;
+	font-weight: bolder;
+	margin-bottom: 50px;
+}
+.jport-config-instruction {
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;	
+}
+.jport-config-trunk-color {
+	color: red;
+}
+.jport-config-quad-color {
+	color: orange;
+}
+.jport-config-dual-color {
+	color: green;
+}
+.jport-config-single-color {
+	color: gray;
+}
+.jport-config-unlag-color {
+	color: blue;
+}
+.jport-config-port-layout .jport-config-trunk,
+.jport-config-port-layout .jport-config-quad,
+.jport-config-port-layout .jport-config-dual,
+.jport-config-port-layout .jport-config-unlag,
+.jport-config-port-layout .jport-config-single {
+	padding-top: 10px;
+	float: left;
+}
+.jport-config-info {
+	width: 900px;
+}
+.jport-config-spacing-xxlarge {
+	margin-right: 60px;
+}
+.jport-config-spacing-large {
+	margin-right: 20px;
+}
+.jport-config-spacing-small {
+	margin-right: 10px;
+}
+.jport-config-portnum {
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 28px;
+	text-align: center;
+	color: white;
+}
+.jport-config-nonlag,
+.jport-config-lag {
+	display: block;
+	font-size: xx-small;
+	text-align: center;
+}
+.jport-config-input {
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	position: relative;	
+	width: 800px;
+	height: 200px;	
+}
+#jdone {
+	position: fixed;
+	left: 10px;
+	top: 10px;
+}
+label[for='trunk-select'],
+label[for='quad-select'],
+label[for='dual-select'],
+label[for='unlag-select'] {
+	width: 100px;
+	display: block;
+}
+select[name='trunk-select'],
+select[name='quad-select'],
+select[name='dual-select'],
+select[name='unlag-select'] {
+	width: 150px;
+	display: block;
+}
+input[name='order-num'] {
+	width: 135px;
+}
+#config-select {
+	width: 150px;
+}
+.label-name {
+	font-family: verdana;
+}
+.label-value {
+	font-family: Arial;
+	font-weight: bold; 
+}
+ul {
+	list-style: none;
+}
+.jdivider {
+	width: 100%;
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+}
+.jerror {
+	background-color: red;
+}
+.remaining-port {
+	margin: 10px 0;
+}
+.remaining-port-value {
+	color: blue;
+	font-weight: bolder;
+}
+#jprint {
+	float: right;
+}
+@media print {
+
+	.jport-config-input {
+		display: none;
+	}
+	.ui-dialog, 
+	.ui-widget,
+	.ui-widget-content,
+	.ui-draggable,
+	.ui-dialog-titlebar,
+	.ui-widget-header,
+	.ui-corner-all,
+	.ui-helper-clearfix {
+		display: none;
+	}
+	.jport-config-trunk-color {
+		color: red !important;
+	}
+	.jport-config-quad-color {
+		color: orange !important;
+	}
+	.jport-config-dual-color {
+		color: green !important;
+	}
+	.jport-config-single-color {
+		color: gray !important;
+	}
+	.jport-config-unlag-color {
+		color: blue !important;
+	}
+}

@@ -1,0 +1,32 @@
+table {
+	width: 600px;
+	height: 50%;
+	border: 1px dashed grey;
+	border-collapse: collapse;
+}
+
+table th {
+	padding: 5px;
+	background-color: grey;
+	color: white;
+	border: 0px;
+}
+
+table td {
+	padding: 10px;
+	text-align: center;
+	border: 0px;
+}
+
+table tbody tr:hover {
+	background-color: #F6AF3A;
+	cursor: pointer;
+}
+
+table tbody .even {
+	background-color: #F8F8F8;
+}
+
+table tbody .odd {
+	background-color: #E8E8E8;
+}

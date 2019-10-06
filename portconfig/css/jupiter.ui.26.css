@@ -1,0 +1,13 @@
+/* FOR 26 PORTS */
+.jport-config-holder {
+	width: 800px; 
+	height: 1100px; 
+}
+.jport-config-port-layout {
+	width: 600px; 
+}
+.jport-config-grid .jport-config-grp .jport-config-port {
+	width: 30px; 
+	height: 30px; 
+}
+

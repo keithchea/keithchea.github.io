@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<meta name="viewport" content="initial-scale=1">	
+	<title>Port Layout Sheet</title>
+
+    <link rel="stylesheet" href="./css/lib/base/jquery-ui-1.9.0.base.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/lib/custom/jquery-ui-1.9.2.custom.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/lib/bootstrap/bootstrap-2.3.1.min.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/lib/jupiter.ui.jicon.black.16.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/lib/jupiter.ui.jicon.white.16.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/lib/jupiter.ui.jbutton.kaula.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/lib/jupiter.ui.jtable.kaula.css" type="text/css" media="screen" />
+    <link rel="stylesheet" href="./css/jupiter.ui.portlayoutsheet.css" type="text/css" media="screen, print" />
+    <link rel="stylesheet" href="./css/jupiter.ui.52.css" type="text/css" media="screen, print" />     
+    
+    <script src="./js/lib/jquery-2.0.0.min.js" type="text/javascript"></script>
+    <script src="./js/lib/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+    <script src="./js/lib/jquery.cookie.js" type="text/javascript"></script>
+    <script src="./js/lib/knockout-2.2.1.min.js" type="text/javascript"></script>
+    <script src="./js/jupiter.ui.52.js" type="text/javascript"></script>    
+    <script src="./js/jupiter.ui.portlayoutsheet.js" type="text/javascript"></script>    
+
+</head>
+<body>
+	<div class="jport-config-holder">
+		<div class="jport-config-header">
+		
+			<div class="jport-config-page-title">
+				<h3><span class="label-name">PixelNet Backbone Switch Port Configuration Sheet</span></h3>
+			</div>
+			<div class="jdivider"></div>
+			<div class="jport-config-order-num">
+				<span class="label-name">Sales Order #: </span><span class="label-value" data-bind="text: $root.salesOrderNumber"></span>
+			</div>		
+			<div class="jport-config-config">
+				<span class="label-name">Configuration: </span><span class="label-value" data-bind="text: $root.configLabel()"></span>
+			</div>
+		
+		</div>
+		
+		<div class="jport-config-body">
+		
+			<div class="jport-config-wireframe">
+				<div class="jport-config-model">
+					<span data-bind="text: $root.configName"></span>
+				</div>
+				<div class="jport-config-port-layout">
+					<div class="jport-config-trunk-holder" data-bind="visible: renderTrunkPorts() > 0">
+						<div class="jport-config-trunk">
+							<div class="jport-config-grid" data-bind="template: {name: 'single_port_template', foreach: new Array(renderTrunkPorts()) }">
+																																																											
+							</div>
+							<div data-bind="css : { 'jport-config-lag': renderTrunkPorts() > 0 }">LAG</div>										
+						</div>
+					</div>
+					
+					<div class="jport-config-quad-holder" data-bind="template: {name: 'quad_port_template', foreach: new Array(renderQuadPorts()) }">					
+		
+					</div>
+					
+					<div class="jport-config-dual-holder" data-bind="template: {name: 'dual_port_template', foreach: new Array(renderDualPorts()) }">
+		
+					</div>
+					
+					<div class="jport-config-single-holder" data-bind="visible: renderSinglePorts() > 0">
+						<div class="jport-config-single">
+							<div class="jport-config-grid" data-bind="template: {name: 'single_port_template', foreach: new Array(renderSinglePorts()) }">
+													 																																																							
+							</div>										
+						</div>
+					</div>
+						
+					<div class="jport-config-unlag-holder" data-bind="visible: renderUnlagPorts() > 0">			
+						<div class="jport-config-unlag">
+							<div class="jport-config-grid" data-bind="template: {name: 'single_port_template', foreach: new Array(renderUnlagPorts()) }">
+												 																																																							
+							</div>
+							<div class="jport-config-nonlag">NON-<br>LAG</div>										
+						</div>
+					</div>
+	
+				</div>
+										
+			</div>
+			
+			<div class="jport-config-info">
+				<div class="jport-config-trunk-color">
+					<span>Trunk LAGs</span>
+					<ul>
+						<li data-bind="text: $root.trunkPortRange"> </li>
+					</ul>
+				</div>
+				<div class="jport-config-quad-color">
+					<span>4-port LAGs</span>
+					<ul data-bind="html: $root.quadPortRange">
+
+					</ul>					
+				</div>
+				<div class="jport-config-dual-color">
+					<span>2-port LAGs</span>
+					<ul data-bind="html: $root.dualPortRange">
+
+					</ul>					
+				</div>
+				<div class="jport-config-single-color">
+					<span>1-port LAGs</span>
+					<ul>
+						<li data-bind="text: $root.singlePortRange"> </li>
+					</ul>					
+				</div>
+				<div class="jport-config-unlag-color">
+					<span>Non-LAG (StreamCenter) ports</span>
+					<ul>
+						<li data-bind="text: $root.unlagPortRange"> </li>
+					</ul>
+				</div>
+																						
+			</div>
+
+			<div class="jport-config-instruction">
+				<h4>IMPORTANT CONFIGURATION INFORMATION: DO NOT TOSS THIS SHEET!</h4>
+				<p>See chapter 3 of the <b>PixelNet Hardware Manual</b> (p/n <span>A-900-011-06</span>) in your PDC 2.0 manual set for the instructions on how to connect your PixelNet hardware.</p>
+			</div>		
+															
+		</div>
+
+		<div class="jport-config-footer">
+			<div class="jport-config-jupiter-pn"><span class="label-name">Jupiter p/n: </span><span class="label-value" data-bind="text: $root.pnNumber"></span><span> <span class="label-name">Revision: </span><span class="label-value">A</span></span></div>
+		</div>
+					
+		<div class="jport-config-input">
+	
+			<label for="order-num">Sales Order #: </label>
+            <input name="order-num" type="text" data-bind="value: $root.salesOrderNumber, valueUpdate: 'afterkeydown'">
+			
+			<label for="trunk-select">Trunk:</label>
+            <select id="trunk-select" name="trunk-select" data-bind="options: trunkDropdownValues(), value: chosenTrunkPort, valueUpdate: 'keydown', event : { change: $root.chosenPort.bind($data, 'trunk') }">
+            	
+            </select>	            
+			<label for="quad-select">Quad Ports:</label>
+			<select id="quad-select" name="quad-select" data-bind="options: quadDropdownValues(), value: chosenQuadPort, valueUpdate: 'keydown', event : { change: $root.chosenPort.bind($data, 'quad') }">
+	            	
+            </select>				
+			<label for="dual-select">Dual Ports:</label>
+			<select id="dual-select" name="dual-select" data-bind="options: dualDropdownValues(), value: chosenDualPort, valueUpdate: 'keydown', event : { change: $root.chosenPort.bind($data, 'dual') }">
+	            	
+	        </select>				
+			<label for="unlag-select">Unlag Ports:</label>
+			<select id="unlag-select" name="unlag-select" data-bind="options: unlagDropdownValues(), value: chosenUnlagPort, valueUpdate: 'keydown', event : { change: $root.chosenPort.bind($data, 'unlag') }">
+	            	
+	        </select>
+	        <div class="remaining-port">Remaining Ports: <span class="remaining-port-value" data-bind="text: renderSinglePorts() * 2"></span></div>
+     	    <hr />
+	        <button id="jprint" class="jbutton-kaula positive">Print</button>				
+	
+		</div>
+
+     	<script type="text/x-jquery-tmpl" id="port_range_template">
+			<li></li>
+        </script>
+        
+     	<script type="text/x-jquery-tmpl" id="single_port_template">
+			<div class="jport-config-grp">
+				<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+				<div class="jport-config-port"><span class="jport-config-portnum"></span></div>											
+			</div>
+        </script>
+        
+     	<script type="text/x-jquery-tmpl" id="dual_port_template">
+			<div class="jport-config-dual">
+				<div class="jport-config-grid">
+					<div class="jport-config-grp">
+						<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+						<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+					</div>																																															
+				</div>
+				<div class="jport-config-lag">LAG</div>
+			</div>
+        </script>
+        
+     	<script type="text/x-jquery-tmpl" id="quad_port_template">        
+			<div class="jport-config-quad">
+				<div class="jport-config-grid">
+					<div class="jport-config-grp">
+						<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+						<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+					</div>
+					<div class="jport-config-grp">
+						<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+						<div class="jport-config-port"><span class="jport-config-portnum"></span></div>
+					</div>																																				
+				</div>
+				<div class="jport-config-lag">LAG</div>
+			</div>
+		</script>	        		
+	</div>
+</body>
+</html>

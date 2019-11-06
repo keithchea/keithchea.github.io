@@ -6,4 +6,4 @@ The BookManager Interview project was given to me by my former employer Jupiter 
 
 Note: click on any existing row to edit the book or add button (top corner left) to add a new book.
 
-https://keithchea.github.io/interviews/bookmanager/index.html
+https://keithchea.github.io/interviews/projects/bookmanager/index.html
